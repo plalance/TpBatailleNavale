@@ -1,0 +1,6 @@
+1-ajout fichier dans versionning : git add nomfichier
+2-faire un commit : git commit -am "message"
+3-récupérer le dépot : git pull origin nom_branche
+4-git push origin nom_branche
+
+git status

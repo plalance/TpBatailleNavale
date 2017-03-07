@@ -35,7 +35,7 @@ public class Joueur {
 
     @java.lang.Override
     public java.lang.String toString() {
-        return "Joueur{" +
+        return  "Joueur{" +
                 "login='" + login + '\'' +
                 ", droit=" + droit +
                 ", equipe='" + equipe + '\'' +

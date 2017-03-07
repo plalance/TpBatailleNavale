@@ -24,4 +24,16 @@ public class Amiral extends Joueur{
     public Amiral() {
         super();
     }
+
+    @Override
+    public String toString() {
+        ArrayList<String> lesBateauxLib = new ArrayList<String>();
+        for (Bateau item : lesBateaux){
+            lesBateauxLib.add(item.getLibelle());
+        }
+        return "Amiral{" +
+                "lesBateaux=" + lesBateauxLib +
+                ", lesMatelos=" + lesMatelos +
+                "} herite -->"+ super.toString();
+    }
 }

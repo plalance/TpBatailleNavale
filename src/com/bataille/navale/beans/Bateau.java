@@ -1,6 +1,7 @@
 package com.bataille.navale.beans;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Bateau {
     private int type;
@@ -86,5 +87,20 @@ public class Bateau {
     }
 
     public Bateau() {
+    }
+
+    @Override
+    public String toString() {
+        return "Bateau{" +
+                "type=" + type +
+                ", libelle='" + libelle + '\'' +
+                ", longueur=" + longueur +
+                ", orientation='" + orientation + '\'' +
+                ", etat=" + etat +
+                ", position=" + Arrays.toString(position) +
+                ", placeOccupee=" + Arrays.toString(placeOccupee) +
+                ", equipe='" + equipe + '\'' +
+                ", lesMatelos=" + lesMatelos +
+                '}';
     }
 }

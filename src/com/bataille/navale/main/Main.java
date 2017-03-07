@@ -9,7 +9,30 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Main {
+import javafx.application.Application;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.RowConstraints;
+import javafx.stage.Stage;
+
+public class Main extends Application{
+	// Pour le moment la fenêtre javafx est vide mais on mettra le contenu après avec les images de bateau et le css...
+	@Override
+	public void start(Stage stage) {
+		Group root = new Group();
+		Scene scene = new Scene(root, 500, 200);
+		stage.setScene(scene);
+
+		GridPane gridpane = new GridPane();
+		for (int i = 0; i < 10; i++) {
+			RowConstraints row = new RowConstraints(50);
+			gridpane.getRowConstraints().add(row);
+		}
+		root.getChildren().add(gridpane);
+		stage.show();
+	}
+
 	public static void main(String[] args) {
 		Joueur monJoueur = new Joueur();
 		monJoueur.setDroit(3);
@@ -71,5 +94,7 @@ public class Main {
 		for (Bateau leBateau: monAmiral.getLesBateaux()){
 			System.out.println(leBateau.toString() + "\n");
 		}
+
+		launch(args);
 	}
 }

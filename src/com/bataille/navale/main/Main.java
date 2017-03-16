@@ -50,7 +50,7 @@ public class Main extends Application{
 
 		// notre premier bateau
 		Bateau monBateau = new Bateau();
-		monBateau.setType(5);
+		monBateau.setType("Cuirasse");
 		monBateau.setEquipe(monAmiral.getEquipe());
 		monBateau.setEtat(1);
 		monBateau.setLibelle("Black Pearl");
@@ -66,7 +66,7 @@ public class Main extends Application{
 
 		// notre deuxième bateau
 		Bateau monBateau2 = new Bateau();
-		monBateau2.setType(3);
+		monBateau2.setType("Sous-Marin");
 		monBateau2.setEquipe(monAmiral.getEquipe());
 		monBateau2.setEtat(1);
 		monBateau2.setLibelle("Gondole de Venise");
@@ -82,7 +82,9 @@ public class Main extends Application{
 		// Laliste des bateaux de l'amiral et ajout des bateau dans cette liste
 		ArrayList<Bateau> maListeDeBateaux = new ArrayList<Bateau>();
 		maListeDeBateaux.add(monBateau);
+		
 		maListeDeBateaux.add(monBateau2);
+		
 		// On Ajoute a l'amiral saliste de bateaux
 		monAmiral.setLesBateaux(maListeDeBateaux);
 

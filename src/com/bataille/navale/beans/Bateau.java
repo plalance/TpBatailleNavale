@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Bateau {
-    private int type;
+    private String type;
     private String libelle;
     private int longueur;
     private String orientation;
@@ -14,11 +14,11 @@ public class Bateau {
     private String equipe;
     private ArrayList<Matelos> lesMatelos;
 
-    public int getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(int type) {
+    public void setType(String type) {
         this.type = type;
     }
 
@@ -87,6 +87,8 @@ public class Bateau {
     }
 
     public Bateau() {
+        this.etat = 1;
+
     }
 
     @Override

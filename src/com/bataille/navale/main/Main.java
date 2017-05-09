@@ -4,6 +4,7 @@ import com.bataille.navale.beans.Amiral;
 import com.bataille.navale.beans.Bateau;
 import com.bataille.navale.beans.StageInterface;
 import com.bataille.navale.beans.Joueur;
+import com.bataille.navale.beans.Serveur;
 
 import java.util.ArrayList;
 
@@ -84,6 +85,8 @@ public class Main extends Application {
         }
 
         launch(args);
+
+        monJoueur.connexionServeur(4242);
     }
 
     // Pour le moment la fenêtre javafx est vide mais on mettra le contenu après avec les images de bateau et le css...

@@ -41,4 +41,9 @@ public class Joueur {
                 ", equipe='" + equipe + '\'' +
                 '}';
     }
+
+    public void connexionServeur(int port){
+        Client joueur = new Client(port);
+        joueur.start();
+    }
 }

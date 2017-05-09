@@ -21,6 +21,7 @@ public class Handler extends Thread{
     public void run() {
         if (nb_joueur_connecte > 2){ //Vérification nombre de joueurs.
             System.out.println("Plus de 2 joueurs connectés, fermeture de la socket...");
+
             try {
                 socket.close();
             }
@@ -29,6 +30,7 @@ public class Handler extends Thread{
             }
         }
 
+        System.out.println("Connexion établie...Passage du socket au Thread ServGuest");
         stockage_socket_client.addElement(socket); //Ajout de la socket cliente dans le Vector.
         new ServGest(socket).start(); //Création d'une nouvelle instance de servGest en lui donnant la socket cliente
 

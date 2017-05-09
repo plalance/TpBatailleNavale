@@ -9,7 +9,7 @@ public class Serveur {
     public static void main(String[] args){
         ServerSocket serverSocket;
         try {
-            serverSocket = new ServerSocket(2222);
+            serverSocket = new ServerSocket(4242);
             System.out.println("ServeurMultiThread pret");
             boolean estActif = true;
             // boucle sur les connexions et demarrage d'un Thread

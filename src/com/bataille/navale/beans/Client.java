@@ -10,28 +10,36 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 public class Client extends Thread {
-    private final int port;
-    public Client(int n) { //constructeur
-        super();
-        port = n;
+    private int port;
+    private Socket sock;
+
+    public Client() { //constructeur
     }
-    public void run(){
-        Socket socket2;
+
+    public void run(int portNumber) {
         try {
-            socket2 = new Socket("localhost", port);
+            this.sock = new Socket("localhost", portNumber);
             // simulation d'attente
-            PrintWriter writer = new PrintWriter(socket2.getOutputStream());
+            PrintWriter writer = new PrintWriter(sock.getOutputStream());
             writer.print("Client : Connexion réussie");
             writer.flush();
             writer.print("Client : Je me déconnecte");
             writer.flush();
-            socket2.close();
+            sock.close();
         } catch (UnknownHostException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } //catch (InterruptedException e) {
-            //e.printStackTrace();
+        //e.printStackTrace();
         //}
     }
+
+    public int getPort() {
+        return port;
+    }
+    public void setPort(int port) {
+        this.port = port;
+    }
+
 }

@@ -1,13 +1,22 @@
 package com.bataille.navale.beans;
 
-public class Joueur {
+import java.net.Socket;
+
+public class Joueur extends Client{
 
     private String login;
     private int droit;
     private String equipe;
 
-    public Joueur(){
+    public Socket getSocket2() {
+        return socket2;
     }
+
+    public void setSocket2(Socket socket2) {
+        this.socket2 = socket2;
+    }
+
+    private Socket socket2;
 
     public String getLogin() {
         return login;
@@ -42,8 +51,18 @@ public class Joueur {
                 '}';
     }
 
-    public void connexionServeur(int port){
-        Client joueur = new Client(port);
-        joueur.start();
+    public void connexionServeur(){
+        if(this.getPort() == 0){
+            System.out.println("Je n'ai pas de numéro de port !");
+        }else {
+            this.run(this.getPort());
+            System.out.println("Connexion...");
+            System.out.println("Deconnexion...");
+            this.start();
+        }
+    }
+
+    public Joueur(){
+        super();
     }
 }
